@@ -10,6 +10,18 @@
 void on_button_clicked(GtkWidget *widget, gpointer data) 
 {
     const char* command = static_cast<const char*>(data);
+    const char* subplotdos = "plotdos";
+    std::string element;
+    char tmp[100];
+    if (strstr(command, subplotdos) != NULL) 
+    {
+	g_print("Enter element: "); 
+	std::cin >> element;
+	strcpy(tmp, command);
+	strcat(tmp, " --element ");
+        strcat(tmp, element.c_str());
+	command = tmp;
+    }
     g_print("%s\n", command);
     std::system(command);
     g_print("finished\n");
@@ -35,6 +47,7 @@ int main(int argc, char *argv[])
     {
         "lobsterpy createinputs",
         "lobsterpy autoplot",
+	"lobsterpy plotdos",
         // Add more commands for additional buttons if needed
     };
 
