@@ -9,7 +9,7 @@ EXECUTABLE = lobsterpygui
 all: $(EXECUTABLE)
 
 check: $(EXECUTABLE)
-      ./$(EXECUTABLE)
+	./$(EXECUTABLE)
 
 $(EXECUTABLE): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $@ $(LIBS)
