@@ -8,9 +8,8 @@ EXECUTABLE = lobsterpygui
 
 all: $(EXECUTABLE)
 
-check: $(EXECUTABLE)
-
-distcheck: $(EXECUTABLE)
+check: $(EXECUTABLE) #TODO: setup a proper non-GUI check other than ./$(EXECUTABLE)
+distcheck: $(EXECUTABLE) #TODO: setup a proper distcheck
 
 $(EXECUTABLE): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $@ $(LIBS)
