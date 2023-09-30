@@ -1,20 +1,15 @@
 CC = g++
-CFLAGS = --cflags -Wall -std=c++11
-LDFLAGS = --libs gtk+-3.0
-
-SOURCES = src/main.cpp
-OBJECTS = $(SOURCES:.cpp=.o)
+CFLAGS = $(shell pkg-config --cflags gtk+-3.0)
+LIBS = $(shell pkg-config --libs gtk+-3.0)
+SRC = src/main.cpp
 EXECUTABLE = lobsterpygui
 
 .PHONY: all clean
 
 all: $(EXECUTABLE)
 
-$(EXECUTABLE): $(OBJECTS)
-    $(CC) -o $@ $(pkg-config $(CFLAGS) $(OBJECTS) $(LDFLAGS))
-
-%.o: %.cpp
-    $(CC) $(CFLAGS) -c $< -o $@
+$(EXECUTABLE): $(SRC)
+	$(CC) $(CFLAGS) $(SRC) -o $@ $(LIBS)
 
 clean:
-    rm -f $(OBJECTS) $(EXECUTABLE)
+	rm -f $(EXECUTABLE)
