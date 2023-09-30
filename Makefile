@@ -1,6 +1,6 @@
 CC = g++
-CFLAGS = -Wall -std=c++11
-LDFLAGS = $(pkg-config --cflags --libs gtk+-3.0)
+CFLAGS = --cflags -Wall -std=c++11
+LDFLAGS = --libs gtk+-3.0
 
 SOURCES = src/main.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
@@ -11,7 +11,7 @@ EXECUTABLE = lobsterpygui
 all: $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)
-    $(CC) $(CFLAGS) $(OBJECTS) -o $@ $(LDFLAGS)
+    $(CC) -o $@ $(pkg-config $(CFLAGS) $(OBJECTS) $(LDFLAGS))
 
 %.o: %.cpp
     $(CC) $(CFLAGS) -c $< -o $@
