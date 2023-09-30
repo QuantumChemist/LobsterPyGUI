@@ -10,6 +10,8 @@ all: $(EXECUTABLE)
 
 check: $(EXECUTABLE)
 
+distcheck: $(EXECUTABLE)
+
 $(EXECUTABLE): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $@ $(LIBS)
 
