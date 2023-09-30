@@ -4,6 +4,7 @@
 #include <gtk/gtk.h>
 
 // let's see what's left of the c++ skills...
+// compile with g++ -o lobsterpygui src/main.cpp $(pkg-config --cflags --libs gtk+-3.0)
 
 // Callback function for the button click event
 void on_button_clicked(GtkWidget *widget, gpointer data) 
