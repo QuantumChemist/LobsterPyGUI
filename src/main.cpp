@@ -6,38 +6,52 @@
 // let's see what's left of the c++ skills...
 // compile with g++ -o lobsterpygui src/main.cpp $(pkg-config --cflags --libs gtk+-3.0)
 
-// Callback function for the button click event
+// Callback function for the button click event, could put that in its own header main.hpp
 void on_button_clicked(GtkWidget *widget, gpointer data) 
 {
     const char* command = static_cast<const char*>(data);
     const char* subplotdos = "plotdos";
+    const char* subplot = "plot";
     std::string element;
-    char tmp[100];
+    int bond_num;
+    char tmppd[100];
+    char tmpp[100];
     if (strstr(command, subplotdos) != NULL) 
     {
 	g_print("Enter element: "); 
 	std::cin >> element;
-	strcpy(tmp, command);
-	strcat(tmp, " --element ");
-        strcat(tmp, element.c_str());
-	command = tmp;
+	strcpy(tmppd, command);
+	strcat(tmppd, " --element ");
+        strcat(tmppd, element.c_str());
+	command = tmppd;
+    }
+    if (strstr(command, subplot) != NULL) 
+    {
+	g_print("Enter bond number: "); 
+	std::cin >> bond_num;
+	std::string bond_num_str = " " + std::to_string(bond_num);
+	strcpy(tmpp, command);
+        strcat(tmpp, bond_num_str.c_str());
+	command = tmpp;
     }
     g_print("%s\n", command);
     std::system(command);
     g_print("finished\n");
 }
 
-
 int main(int argc, char *argv[])
 {
-    std::cout << "LobsterPyGUI written by Christina Ertural (currently in a very basic mode)" << std:: endl;
+    std::cout << "LobsterPyGUI written by Christina Ertural for very beginners to get familiar with LOBSTER and LobsterPy!" << std:: endl;
 
     // Initialize GTK+
     gtk_init(&argc, &argv);
+    GtkWidget *window;
 
     // Create the main window
-    GtkWidget *window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-    gtk_window_set_title(GTK_WINDOW(window), "LobsterPyGUI Prototype");
+    window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+    gtk_window_set_title(GTK_WINDOW(window), "LobsterPyGUI: Very basic LobsterPy features");
+    //gtk_window_set_keep_above(GTK_WINDOW(window), TRUE);
+    gtk_window_present (GTK_WINDOW (window));
     g_signal_connect(window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
     GtkWidget *box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 10);
     gtk_container_add(GTK_CONTAINER(window), box);
@@ -45,9 +59,14 @@ int main(int argc, char *argv[])
     // Create a button and connect it to the callback function
     const char* button_commands[] = 
     {
+	"lobsterpy description",
+	"lobsterpy calc-description",
+	"lobsterpy autoplot",
+	"lobsterpy autoplotia",
         "lobsterpy createinputs",
-        "lobsterpy autoplot",
 	"lobsterpy plotdos",
+	"lobsterpy plot-icohps-distances",
+	"lobsterpy plot"
         // Add more commands for additional buttons if needed
     };
 
