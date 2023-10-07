@@ -5,7 +5,7 @@
 
 // let's see what's left of the c++ skills...
 // compile with g++ -o lobsterpygui src/main.cpp $(pkg-config --cflags --libs gtk+-3.0)
-
+// May Bernhard's Klickibunti approach live on forever ~
 // Callback function for the button click event, could put that in its own header main.hpp
 void on_button_clicked(GtkWidget *widget, gpointer data) 
 {
