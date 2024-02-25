@@ -10,21 +10,9 @@
 void on_button_clicked(GtkWidget *widget, gpointer data) 
 {
     const char* command = static_cast<const char*>(data);
-    const char* subplotdos = "plotdos";
     const char* subplot = "plot";
-    std::string element;
     int bond_num;
-    char tmppd[100];
     char tmpp[100];
-    if (strstr(command, subplotdos) != NULL) 
-    {
-	g_print("Enter element: "); 
-	std::cin >> element;
-	strcpy(tmppd, command);
-	strcat(tmppd, " --element ");
-        strcat(tmppd, element.c_str());
-	command = tmppd;
-    }
     if (strstr(command, subplot) != NULL) 
     {
 	g_print("Enter bond number: "); 
@@ -64,9 +52,9 @@ int main(int argc, char *argv[])
 	"lobsterpy autoplot",
 	"lobsterpy autoplotia",
         "lobsterpy createinputs",
-	"lobsterpy plotdos",
+	"lobsterpy plot",
 	"lobsterpy plot-icohps-distances",
-	"lobsterpy plot"
+	"lobsterpy plotdos"
         // Add more commands for additional buttons if needed
     };
 
