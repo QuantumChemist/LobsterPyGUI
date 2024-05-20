@@ -9,39 +9,40 @@ on:
       - main
 
 jobs:
-  build:
+  build-desktop:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Install Qt
+    - name: Install Qt for Desktop
       uses: jurplel/install-qt-action@v2
       with:
-        version: '5.15.2' # Specify the Qt version you need
+        version: '5.15.2'
         host: 'linux'
         target: 'desktop'
         arch: 'gcc_64'
-        dir: '$HOME/Qt' # Optional: specify a custom installation directory
-    - name: Set up Qt environment
+        dir: '$HOME/Qt'
+
+    - name: Set up Qt environment for Desktop
       run: |
         echo "export QTDIR=$HOME/Qt/5.15.2/gcc_64" >> $GITHUB_ENV
         echo "export PATH=$HOME/Qt/5.15.2/gcc_64/bin:\$PATH" >> $GITHUB_ENV
         echo "export LD_LIBRARY_PATH=$HOME/Qt/5.15.2/gcc_64/lib:\$LD_LIBRARY_PATH" >> $GITHUB_ENV
+      shell: bash
+
+    - name: Source environment
+      run: |
+        source $HOME/Qt/5.15.2/gcc_64/bin/qt-env.sh
+        qmake --version
+      shell: bash
+
     - name: Install build dependencies
       run: sudo apt-get install -y build-essential
-    - name: Change to src directory
-      working-directory: ./src
-      run: echo "Changed directory to src"
-    - name: Configure project with qmake
-      working-directory: ./src
-      run: qmake -project || true # This is optional if .pro file already exists
-    - name: Generate Makefile with qmake
-      working-directory: ./src
-      run: qmake
+
     - name: Build project
       working-directory: ./src
-      run: make
-
-
+      run: |
+        qmake
+        make
+      shell: bash
