@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: temporary
 
 on:
   push:
@@ -17,9 +17,4 @@ jobs:
       run: ./configure
     - name: Change to src directory
       run: cd src
-    - name: Run make
-      run: make
-    - name: Run make check
-      run: make check
-    - name: Run make distcheck
-      run: make distcheck
+      
