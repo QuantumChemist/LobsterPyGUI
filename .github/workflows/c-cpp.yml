@@ -14,7 +14,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-
     - name: Install Qt for Desktop
       uses: jurplel/install-qt-action@v2
       with:
@@ -23,26 +22,22 @@ jobs:
         target: 'desktop'
         arch: 'gcc_64'
         dir: '$HOME/Qt'
-
     - name: Set up Qt environment for Desktop
       run: |
         echo "export QTDIR=$HOME/Qt/5.15.2/gcc_64" >> $GITHUB_ENV
         echo "export PATH=$HOME/Qt/5.15.2/gcc_64/bin:\$PATH" >> $GITHUB_ENV
         echo "export LD_LIBRARY_PATH=$HOME/Qt/5.15.2/gcc_64/lib:\$LD_LIBRARY_PATH" >> $GITHUB_ENV
       shell: bash
-
-    - name: Source environment
-      run: |
-        source $HOME/Qt/5.15.2/gcc_64/bin/qt-env.sh
-        qmake --version
-      shell: bash
-
-    - name: Install build dependencies
-      run: sudo apt-get install -y build-essential
-
-    - name: Build project
-      working-directory: ./src
-      run: |
-        qmake
-        make
-      shell: bash
+  #  - name: Source environment
+  #    run: |
+  #      source $HOME/Qt/5.15.2/gcc_64/bin/qt-env.sh
+  #      qmake --version
+  #    shell: bash
+  #  - name: Install build dependencies
+  #    run: sudo apt-get install -y build-essential
+  #  - name: Build project
+  #    working-directory: ./src
+  #    run: |
+  #      qmake
+  #      make
+  #    shell: bash
