@@ -1,20 +1,45 @@
-name: temporary
+name: Build Project
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: configure
-      run: ./configure
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v2
+      with:
+        version: '5.15.2' # Specify the Qt version you need
+        host: 'ubuntu'
+        target: 'desktop'
+        arch: 'gcc_64'
+        dir: '$HOME/Qt' # Optional: specify a custom installation directory
+    - name: Set up Qt environment
+      run: source $HOME/Qt/5.15.2/gcc_64/bin/qt-env.sh
+    - name: Install build dependencies
+      run: sudo apt-get install -y build-essential
     - name: Change to src directory
       run: cd src
-      
+    - name: Configure project with qmake
+      run: |
+        cd src
+        qmake -project || true # This is optional if .pro file already exists
+    - name: Generate Makefile with qmake
+      run: |
+        cd src
+        qmake
+    - name: Build project
+      run: |
+        cd src
+        make
+
+
