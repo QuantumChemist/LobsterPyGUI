@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
@@ -32,6 +33,8 @@ public:
     QPushButton *buttonPlotAutomaticInteractive;
     QPushButton *buttonPlotDos;
     QPushButton *buttonHelp;
+    QLineEdit *cli;
+    QPushButton *runButton;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -82,6 +85,16 @@ public:
 
         verticalLayout->addWidget(buttonHelp);
 
+        cli = new QLineEdit(centralwidget);
+        cli->setObjectName(QString::fromUtf8("cli"));
+
+        verticalLayout->addWidget(cli);
+
+        runButton = new QPushButton(centralwidget);
+        runButton->setObjectName(QString::fromUtf8("runButton"));
+
+        verticalLayout->addWidget(runButton);
+
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
@@ -99,6 +112,8 @@ public:
         buttonPlotAutomaticInteractive->setText(QCoreApplication::translate("MainWindow", "Create interactive plot of COHPs, COBIs or COOPs automatically", nullptr));
         buttonPlotDos->setText(QCoreApplication::translate("MainWindow", "Plot LOBSTER DOS", nullptr));
         buttonHelp->setText(QCoreApplication::translate("MainWindow", "LobsterPy help", nullptr));
+        cli->setText(QCoreApplication::translate("MainWindow", "cli", nullptr));
+        runButton->setText(QCoreApplication::translate("MainWindow", "run cli command", nullptr));
     } // retranslateUi
 
 };

@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QPlainTextEdit>
 #include <QProcess>
+#include <QLineEdit>
 
 
 QT_BEGIN_NAMESPACE
@@ -19,6 +20,8 @@ public:
     ~MainWindow();
 
 private slots:
+    void updateLobsterCommand(const QString& arguments);
+    void runCurrentLobsterCommand();
     void runLobsterCommand(const QString& command);
     void runCommandCreateInputs();
     void runCommandDescription();
@@ -35,6 +38,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QProcess *process;
+    QString currentLobsterCommand;
 };
 
 #endif // MAINWINDOW_H

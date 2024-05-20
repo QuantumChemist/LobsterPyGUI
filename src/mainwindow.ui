@@ -67,6 +67,20 @@
       </property>
      </widget>
     </item>
+    <item>
+     <widget class="QLineEdit" name="cli">
+      <property name="text">
+       <string>cli</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="runButton">
+      <property name="text">
+       <string>run cli command</string>
+      </property>
+     </widget>
+    </item>
     <!-- Add more buttons for other LobsterPy commands -->
    </layout>
   </widget>

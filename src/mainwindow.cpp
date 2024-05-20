@@ -11,6 +11,9 @@ MainWindow::MainWindow(QWidget *parent)
     // Connect signals for standard output, error output, and process finished
     connect(process, &QProcess::readyReadStandardOutput, this, &MainWindow::readOutput);
     connect(process, &QProcess::readyReadStandardError, this, &MainWindow::readError);
+    connect(ui->cli, &QLineEdit::textChanged, this, &MainWindow::updateLobsterCommand);
+    connect(ui->runButton, &QPushButton::clicked, this, &MainWindow::runCurrentLobsterCommand);
+
     
     ///////////////////LobsterPy Commands///////////////////
     connect(ui->buttonCreateInputs, &QPushButton::clicked, this, &MainWindow::runCommandCreateInputs);
@@ -31,6 +34,24 @@ MainWindow::~MainWindow()
 }
 
 ///////////////////LobsterPy Commands///////////////////
+void MainWindow::updateLobsterCommand(const QString& arguments)
+{
+    // Update the current LobsterPy command
+    currentLobsterCommand = arguments;
+}
+
+void MainWindow::runCurrentLobsterCommand()
+{
+    // Check if the LobsterPy command is not empty
+    if (!currentLobsterCommand.isEmpty()) {
+        // Prepare the argument list
+        QStringList args;
+        args = currentLobsterCommand.split(' ', Qt::SkipEmptyParts);
+
+        // Start the process
+        process->start("lobsterpy", args);
+    }
+}
 void MainWindow::runLobsterCommand(const QString& command)
 {
     // Prepare the argument list
