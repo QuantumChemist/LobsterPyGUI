@@ -15,6 +15,7 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+
     - name: Install Qt
       uses: jurplel/install-qt-action@v2
       with:
@@ -24,7 +25,10 @@ jobs:
         arch: 'gcc_64'
         dir: '$HOME/Qt' # Optional: specify a custom installation directory
     - name: Set up Qt environment
-      run: echo "$HOME/Qt/5.15.2/gcc_64/bin" >> $GITHUB_PATH
+      run: |
+        echo "export QTDIR=$HOME/Qt/5.15.2/gcc_64" >> $GITHUB_ENV
+        echo "export PATH=$HOME/Qt/5.15.2/gcc_64/bin:\$PATH" >> $GITHUB_ENV
+        echo "export LD_LIBRARY_PATH=$HOME/Qt/5.15.2/gcc_64/lib:\$LD_LIBRARY_PATH" >> $GITHUB_ENV
     - name: Install build dependencies
       run: sudo apt-get install -y build-essential
     - name: Change to src directory
@@ -39,4 +43,5 @@ jobs:
     - name: Build project
       working-directory: ./src
       run: make
+
 
