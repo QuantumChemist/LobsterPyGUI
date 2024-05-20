@@ -1,4 +1,4 @@
-name: Build Project
+name: Build LobsterPyGUI
 
 on:
   push:
@@ -24,11 +24,7 @@ jobs:
         arch: 'gcc_64'
         dir: '$HOME/Qt' # Optional: specify a custom installation directory
     - name: Set up Qt environment
-      run: |
-        echo "$HOME/Qt/5.15.2/gcc_64/bin" >> $GITHUB_PATH
-        echo "QTDIR=$HOME/Qt/5.15.2/gcc_64" >> $GITHUB_ENV
-        echo "LD_LIBRARY_PATH=$HOME/Qt/5.15.2/gcc_64/lib:$LD_LIBRARY_PATH" >> $GITHUB_ENV
-        echo "PATH=$HOME/Qt/5.15.2/gcc_64/bin:$PATH" >> $GITHUB_ENV
+      run: echo "$HOME/Qt/5.15.2/gcc_64/bin" >> $GITHUB_PATH
     - name: Install build dependencies
       run: sudo apt-get install -y build-essential
     - name: Change to src directory
@@ -43,5 +39,4 @@ jobs:
     - name: Build project
       working-directory: ./src
       run: make
-
 
