@@ -17,9 +17,9 @@ jobs:
       run: ./configure
     - name: Change to src directory
       run: cd src
-    - name: make
+    - name: Run make
       run: make
-    - name: make check
+    - name: Run make check
       run: make check
-    - name: make distcheck
+    - name: Run make distcheck
       run: make distcheck
