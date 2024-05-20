@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>LobsterPyGUI</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QPlainTextEdit" name="terminal"/>
+    </item>
+    <item>
+     <widget class="QPushButton" name="buttonCreateInputs">
+      <property name="text">
+       <string>Create LOBSTER input files</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="buttonDescription">
+      <property name="text">
+       <string>Automatic description of LOBSTER run</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="buttonDescriptionQuality">
+      <property name="text">
+       <string>Description of LOBSTER run quality</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="buttonPlotAutomatic">
+      <property name="text">
+       <string>Plot COHPs, COBIs or COOPs automatically</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="buttonPlotAutomaticInteractive">
+      <property name="text">
+       <string>Create interactive plot of COHPs, COBIs or COOPs automatically</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="buttonPlotDos">
+      <property name="text">
+       <string>Plot LOBSTER DOS</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="buttonHelp">
+      <property name="text">
+       <string>LobsterPy help</string>
+      </property>
+     </widget>
+    </item>
+    <!-- Add more buttons for other LobsterPy commands -->
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
+
