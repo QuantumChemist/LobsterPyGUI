@@ -19,7 +19,7 @@ jobs:
       uses: jurplel/install-qt-action@v2
       with:
         version: '5.15.2' # Specify the Qt version you need
-        host: 'ubuntu'
+        host: 'linux'
         target: 'desktop'
         arch: 'gcc_64'
         dir: '$HOME/Qt' # Optional: specify a custom installation directory
