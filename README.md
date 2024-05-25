@@ -24,6 +24,6 @@ lobsterpygui
 ```
 # Example 
 
-When you open lobsterpygui in the terminal and click on `LobsterPy help` it will execute the command `lobsterpy --help` in the background and print the standard output (std out) of that command in the GUI.
+When you open lobsterpygui in the terminal and e.g. click on `Plot LOBSTER DOS` it will execute the command `lobsterpy plot-dos` in the background using the lobsterpy-internal plotters. It will also print the standard output (std out)  and errors (std err) of any command in the GUI.
 
 [<img align="left" src="https://quantumchemist.github.io/utils/lpg.png" width="100%" height=auto />](https://github.com/QuantumChemist/LobsterPyGUI)
