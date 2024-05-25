@@ -1,4 +1,6 @@
-# LobsterPyGUI 🦞🐍🖥️
+# LobsterPyGUI 🦞🐍🖥️ 
+<img align="left" src="https://quantumchemist.github.io/utils/lpglogo.png" width="20%" height=auto />
+
 ## A graphical user interface for LobsterPy 
 
 A GUI for an easy start with [LobsterPy](https://github.com/JaGeo/LobsterPy) for the people that are not familiar with the Linux terminal (yet). 
