@@ -1,5 +1,5 @@
 # LobsterPyGUI 🦞🐍🖥️ 
-<img align="left" src="https://quantumchemist.github.io/utils/lpglogo.gif" width="25%" height=auto />
+<img align="right" src="https://quantumchemist.github.io/utils/lpglogo.gif" width="25%" height=auto />
 
 ## A graphical user interface for LobsterPy 
 
