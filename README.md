@@ -24,6 +24,13 @@ lobsterpygui
 ```
 # Example 
 
+[<img align="center" src="https://quantumchemist.github.io/utils/lpg.png" width="100%" height=auto />](https://github.com/QuantumChemist/LobsterPyGUI)
+
 When you open lobsterpygui in the terminal and e.g. click on `Plot LOBSTER DOS` it will execute the command `lobsterpy plot-dos` in the background using the lobsterpy-internal plotters. It will also print the standard output (std out)  and errors (std err) of any command in the GUI.
 
-[<img align="left" src="https://quantumchemist.github.io/utils/lpg.png" width="100%" height=auto />](https://github.com/QuantumChemist/LobsterPyGUI)
+
+# How to cite LOBSTER and LobsterPy?
+
+Please cite [LOBSTER](https://schmeling.ac.rwth-aachen.de/cohp/index.php?menuID=1), [LobsterPy](https://joss.theoj.org/papers/10.21105/joss.06286), [pymatgen](https://github.com/materialsproject/pymatgen), and [ChemEnv](https://doi.org/10.1107/S2052520620007994) properly.
+
+You can find more information on the fundamental functionality of LOBSTER in [*J. Comput. Chem.*](https://doi.org/10.1002/jcc.26353) **2020**, *41*, 1931–1940, and the methodology of the automatic analysis of LobsterPy in [*ChemPlusChem*](https://doi.org/10.1002/cplu.202200123) **2022**, *87*, e202200123.
