@@ -10,23 +10,19 @@ A GUI to handle LOBSTER input and output with LobsterPy. The purpose of this GUI
 
 # How to use LobsterPyGUI?
 
-Simply download the `lobsterpygui` binary and copy it (e.g. in the terminal) to your `$HOME/bin` folder 📂 (don't forget to add your bin folder to your `$PATH` environment variable).
+Simply download the `lobsterpygui` binary and copy it to your `Desktop`.
 
 ```bash
-cp $HOME/Downloads/lobsterpygui $HOME/bin
+cp $HOME/Downloads/lobsterpygui $HOME/Desktop
 ```
-And then you can simply run it in the folder with your LOBSTER calculation where you want to use LobsterPy using a terminal.
+And then you can simply run LobsterPyGUI by double-clicking the binary. With `Open...` you can navigate to the directory with your LOBSTER calculation where you want to use LobsterPy.
 
-```bash
-cd /path/to/your/lobster/calc
 
-lobsterpygui
-```
 # Example 
 
 [<img align="center" src="https://quantumchemist.github.io/utils/lpg.png" width="100%" height=auto />](https://github.com/QuantumChemist/LobsterPyGUI)
 
-When you open lobsterpygui in the terminal and e.g. click on `Plot LOBSTER DOS` it will execute the command `lobsterpy plot-dos` in the background using the lobsterpy-internal plotters. It will also print the standard output (std out)  and errors (std err) of any command in the GUI.
+When you open lobsterpygui, navigate to your calculation run, and e.g. click on `Plot LOBSTER DOS` it will execute the command `lobsterpy plot-dos` in the background using the lobsterpy-internal plotters. It will also print the standard output (std out)  and errors (std err) of any command in the GUI.
 
 
 # How to cite LOBSTER and LobsterPy?
