@@ -2,10 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QPlainTextEdit>
 #include <QProcess>
-#include <QLineEdit>
-
+#include <QFileDialog>
+#include <QDir>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,9 +19,9 @@ public:
     ~MainWindow();
 
 private slots:
-    void updateLobsterCommand(const QString& arguments);
+    void updateLobsterCommand(const QString &arguments);
     void runCurrentLobsterCommand();
-    void runLobsterCommand(const QString& command);
+    void runLobsterCommand(const QString &command);
     void runCommandCreateInputs();
     void runCommandDescription();
     void runCommandDescriptionQuality();
@@ -30,16 +29,19 @@ private slots:
     void runCommandPlotAutomaticInteractive();
     void runCommandPlotDos();
     void runCommandHelp();
-    void readOutput(); 
+    void readOutput();
     void readError();
-    void addOutSeparator();
-    void addErrorSeparator();
+    void openDirectory();
 
 private:
     Ui::MainWindow *ui;
     QProcess *process;
     QString currentLobsterCommand;
+    QString currentDirectory;
+
+    void addOutSeparator();
+    void addErrorSeparator();
+    void updateCurrentDirectory(const QString &dir);
 };
 
 #endif // MAINWINDOW_H
-

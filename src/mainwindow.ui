@@ -19,6 +19,20 @@
      <widget class="QPlainTextEdit" name="terminal"/>
     </item>
     <item>
+     <widget class="QLabel" name="labelCurrentDir">
+      <property name="text">
+       <string>Open files</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="buttonOpenDirectory">
+      <property name="text">
+       <string>Open...</string>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="QPushButton" name="buttonCreateInputs">
       <property name="text">
        <string>Create LOBSTER input files</string>

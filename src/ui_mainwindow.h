@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPlainTextEdit>
@@ -26,6 +27,8 @@ public:
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
     QPlainTextEdit *terminal;
+    QLabel *labelCurrentDir;
+    QPushButton *buttonOpenDirectory;
     QPushButton *buttonCreateInputs;
     QPushButton *buttonDescription;
     QPushButton *buttonDescriptionQuality;
@@ -49,6 +52,16 @@ public:
         terminal->setObjectName(QString::fromUtf8("terminal"));
 
         verticalLayout->addWidget(terminal);
+
+        labelCurrentDir = new QLabel(centralwidget);
+        labelCurrentDir->setObjectName(QString::fromUtf8("labelCurrentDir"));
+
+        verticalLayout->addWidget(labelCurrentDir);
+
+        buttonOpenDirectory = new QPushButton(centralwidget);
+        buttonOpenDirectory->setObjectName(QString::fromUtf8("buttonOpenDirectory"));
+
+        verticalLayout->addWidget(buttonOpenDirectory);
 
         buttonCreateInputs = new QPushButton(centralwidget);
         buttonCreateInputs->setObjectName(QString::fromUtf8("buttonCreateInputs"));
@@ -105,6 +118,8 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "LobsterPyGUI", nullptr));
+        labelCurrentDir->setText(QCoreApplication::translate("MainWindow", "Open files", nullptr));
+        buttonOpenDirectory->setText(QCoreApplication::translate("MainWindow", "Open...", nullptr));
         buttonCreateInputs->setText(QCoreApplication::translate("MainWindow", "Create LOBSTER input files", nullptr));
         buttonDescription->setText(QCoreApplication::translate("MainWindow", "Automatic description of LOBSTER run", nullptr));
         buttonDescriptionQuality->setText(QCoreApplication::translate("MainWindow", "Description of LOBSTER run quality", nullptr));
