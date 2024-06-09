@@ -1,3 +1,4 @@
+[![Download](https://img.shields.io/badge/download-latest-blue.svg)](https://github.com/QuantumChemist/LobsterPyGUI/releases/download/LobsterPyGUI/lobsterpygui)
 # LobsterPyGUI 🦞🐍🖥️ 
 <img align="right" src="https://quantumchemist.github.io/utils/lpglogo.gif" width="25%" height=auto />
 
@@ -10,7 +11,7 @@ A GUI to handle LOBSTER input and output with LobsterPy. The purpose of this GUI
 
 # How to use LobsterPyGUI?
 
-Simply download the `lobsterpygui` binary and copy it to your `Desktop`.
+Simply [download](https://github.com/QuantumChemist/LobsterPyGUI/releases/download/LobsterPyGUI/lobsterpygui) the `lobsterpygui` binary and copy it to your `Desktop`.
 
 ```bash
 cp $HOME/Downloads/lobsterpygui $HOME/Desktop
