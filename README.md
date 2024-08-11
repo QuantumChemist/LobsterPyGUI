@@ -11,11 +11,18 @@ A GUI to handle LOBSTER input and output with LobsterPy. The purpose of this GUI
 
 # How to use LobsterPyGUI?
 
-Simply [download](https://github.com/QuantumChemist/LobsterPyGUI/releases/download/LobsterPyGUI/lobsterpygui) the `lobsterpygui` binary and copy it to your `Desktop`.
+Simply [download](https://github.com/QuantumChemist/LobsterPyGUI/releases/download/LobsterPyGUI/lobsterpygui) the `lobsterpygui` binary, copy it to your `Desktop` and change the file permissions to make the binary executable:
 
+First,
 ```bash
 cp $HOME/Downloads/lobsterpygui $HOME/Desktop
 ```
+
+Then,
+```bash
+chmod u+x lobsterpygui 
+```
+
 And then you can simply run LobsterPyGUI by double-clicking the binary. With `Open...` you can navigate to the directory with your LOBSTER calculation where you want to use LobsterPy.
 
 
