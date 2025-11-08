@@ -28,7 +28,7 @@ And then you can simply run LobsterPyGUI by double-clicking the binary. With `Op
 
 # Example 
 
-[<img align="center" src="https://quantumchemist.github.io/utils/lpg.png" width="100%" height=auto />](https://github.com/QuantumChemist/LobsterPyGUI)
+[<img align="center" src="https://quantumchemist.de/utils/pics/lpg.png" width="100%" height=auto />](https://github.com/QuantumChemist/LobsterPyGUI)
 
 When you open lobsterpygui, navigate to your calculation run, and e.g. click on `Plot LOBSTER DOS` it will execute the command `lobsterpy plot-dos` in the background using the lobsterpy-internal plotters. It will also print the standard output (std out)  and errors (std err) of any command in the GUI.
 
